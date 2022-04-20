@@ -1,0 +1,17 @@
+.tile {
+      height: 11.25vh;
+      width: 6vw;
+      cursor: pointer;
+      border: none;
+      padding: 0px;
+
+
+}
+
+.dark-tile {
+      background-color: #769656;
+}
+
+.light-tile {
+      background-color: #eef5c8;
+}

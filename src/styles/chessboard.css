@@ -1,0 +1,14 @@
+.board{
+      display: flex;
+      flex-wrap: wrap;
+      height: 90vh;
+      width: 48vw;
+      background-color:#769656;
+
+}
+.red{
+      background-color: red;
+      height: 11.25vh;
+      width: 6vw;
+      cursor: pointer;
+}
