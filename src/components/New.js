@@ -6,6 +6,7 @@ const New = (props) => {
   const handleReset = () => {
     window.location.reload();
   };
+
   return (
     <div
       style={{
@@ -17,11 +18,13 @@ const New = (props) => {
         fontWeight: 500,
       }}
     >
-      Possible next moves form <strong>"{cuurPos}"</strong> are:
-      {nextMoves.map((e) => {
-        return <li key={e}>{e}</li>;
-      })}
-      <button type="button" onClick={handleReset}>
+      Knight's next possible moves form <strong>"{cuurPos}"</strong> are:
+      <div className="body">
+        {nextMoves.map((e) => {
+          return <li key={e}>{e}</li>;
+        })}
+      </div>
+      <button type="button" onClick={handleReset} className="blink-btn">
         Reset
       </button>
     </div>

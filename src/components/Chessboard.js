@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../styles/chessboard.css";
 import New from "./New";
 import Tile from "./Tile";
@@ -20,8 +20,9 @@ const Chessboard = () => {
   function isValid(row, col) {
     if (row <= 0 || col <= 0 || row > 8 || col > 8) {
       return false;
+    } else {
+      return true;
     }
-    return true;
   }
 
   //Finding next posible moves:
@@ -34,11 +35,14 @@ const Chessboard = () => {
 
     //Pushing valid moves only:
     for (let i = 0; i < 8; i++) {
-      if (isValid(rowNum + dx[i] && colNum + dy[i])) {
+      if (
+        isValid(rowNum + dx[i] && colNum + dy[i]) &&
+        tileRow[rowNum + dx[i] - 1] !== undefined
+      ) {
         paths.push([tileRow[rowNum + dx[i] - 1], (colNum + dy[i]).toString()]);
       }
     }
-
+    console.log(`Knight's next possible moves from ${row + col} are:`);
     for (let i = 0; i < paths.length; i++) {
       console.log(paths[i][0] + paths[i][1]);
       console.log(" ");
